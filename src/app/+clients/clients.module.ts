@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { authComponents, authServices } from './auth.collections';
+import { clientsComponents, clientsServices } from './clients.collections';
 
 @NgModule({
   imports: [
@@ -17,10 +17,10 @@ import { authComponents, authServices } from './auth.collections';
       BrowserModule
   ],
   declarations: [
-    ...authComponents
+    ...clientsComponents
   ],
   providers: [
-    ...authServices
+    ...clientsServices
   ]
 })
-export class AuthModule { }
+export class ClientsModule { }

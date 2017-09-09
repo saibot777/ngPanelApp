@@ -1,3 +1,6 @@
+import { ClientsModule } from './../+clients/clients.module';
+import { AuthModule } from './../+auth/auth.module';
+import { DashboardComponent } from './../+dashboard/dashboard.component';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -9,11 +12,15 @@ import { BrowserModule } from '@angular/platform-browser';
       CommonModule,
       FormsModule,
       HttpModule,
+      AuthModule,
+      ClientsModule
     ],
   exports : [
     CommonModule,
     BrowserModule
   ],
-  declarations: [ ],
+  declarations: [ 
+    DashboardComponent
+  ],
 })
 export class CoreModule { }

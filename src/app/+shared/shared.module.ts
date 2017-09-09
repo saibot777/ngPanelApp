@@ -1,3 +1,4 @@
+import { sharedComponents } from './shared.collections';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,8 @@ import { BrowserModule } from '@angular/platform-browser';
     CommonModule,
     BrowserModule
   ],
-  declarations: [ ],
+  declarations: [
+    ...sharedComponents
+  ],
 })
 export class SharedModule { }
