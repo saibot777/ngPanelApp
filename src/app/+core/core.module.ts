@@ -1,3 +1,4 @@
+import { SharedModule } from './../+shared/shared.module';
 import { ClientsModule } from './../+clients/clients.module';
 import { AuthModule } from './../+auth/auth.module';
 import { DashboardComponent } from './../+dashboard/dashboard.component';
@@ -13,6 +14,7 @@ import { BrowserModule } from '@angular/platform-browser';
       FormsModule,
       HttpModule,
       AuthModule,
+      SharedModule,
       ClientsModule
     ],
   exports : [
