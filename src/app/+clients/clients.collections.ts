@@ -1,6 +1,5 @@
-/**
- * Created by Stefan Trajkovic
- */
+import { DashboardComponent } from './../+dashboard/dashboard.component';
+import { ClientService } from './shared/services/client.service';
 import { ClientDetailsComponent } from './client-details/client-details.component';
 import { EditClientComponent } from './edit-client/edit-client.component';
 import { ClientsComponent } from './clients/clients.component';
@@ -10,9 +9,10 @@ export const clientsComponents = [
     AddClientComponent,
     ClientsComponent,
     EditClientComponent,
+    DashboardComponent,
     ClientDetailsComponent
 ];
 
 export const clientsServices = [
-
+    ClientService
 ];
