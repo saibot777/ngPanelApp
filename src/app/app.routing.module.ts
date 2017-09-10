@@ -1,3 +1,4 @@
+import { ClientDetailsComponent } from './+clients/client-details/client-details.component';
 import { ClientsComponent } from './+clients/clients/clients.component';
 import { AddClientComponent } from './+clients/add-client/add-client.component';
 import { LoginComponent } from './+auth/login/login.component';
@@ -18,7 +19,16 @@ import { RouterModule } from '@angular/router';
             path: '', redirectTo: 'clients', pathMatch: 'full'
           },
           {
-            path: 'clients', component: ClientsComponent
+            path: 'clients', 
+            component: ClientsComponent,
+            children: [
+              
+                {
+                  path: 'clients/:id',
+                  component: ClientDetailsComponent
+                },
+              
+            ]
           },
           {
             path: 'add-client', component: AddClientComponent
