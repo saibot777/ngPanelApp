@@ -1,0 +1,10 @@
+a {
+    cursor: pointer !important;
+}
+
+a, a:not([href]):not([tabindex]) {
+    color: white;
+}
+.fa {
+    margin-right: 10px;
+}

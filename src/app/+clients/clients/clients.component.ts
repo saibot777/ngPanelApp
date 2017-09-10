@@ -1,3 +1,4 @@
+import { Client } from './../shared/models/client.model';
 import { ClientService } from './../shared/services/client.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,9 +15,9 @@ export class ClientsComponent implements OnInit {
     public clientService: ClientService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
       this.getClients();
-      this.getTotalOwed();
+      // this.getTotalOwed();
   }
 
   public getClients() {
@@ -25,13 +26,14 @@ export class ClientsComponent implements OnInit {
     });
   }
 
-  getTotalOwed(){
-    let total = 0;
-    for (let i = 0;i < this.clients.length; i++) {
-      total += parseFloat(this.clients[i].balance);
-    }
-    this.totalOwed = total;
-    console.log(this.totalOwed);
-  }
+  // To Fix
+  // public getTotalOwed() {
+  //   let total = 0;
+  //   for (let i = 0; i < this.clients.length; i++) {
+  //     total += parseFloat(this.clients[i].balance);
+  //   }
+  //    this.totalOwed = total;
+  //   console.log(this.totalOwed);
+  // }
 
 }

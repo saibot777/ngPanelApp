@@ -1,3 +1,4 @@
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './../+dashboard/dashboard.component';
 import { ClientService } from './shared/services/client.service';
 import { ClientDetailsComponent } from './client-details/client-details.component';
@@ -8,6 +9,7 @@ import { AddClientComponent } from './add-client/add-client.component';
 export const clientsComponents = [
     AddClientComponent,
     ClientsComponent,
+    SidebarComponent,
     EditClientComponent,
     DashboardComponent,
     ClientDetailsComponent

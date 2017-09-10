@@ -1,3 +1,5 @@
+import { ClientsComponent } from './+clients/clients/clients.component';
+import { AddClientComponent } from './+clients/add-client/add-client.component';
 import { LoginComponent } from './+auth/login/login.component';
 import { RegisterComponent } from './+auth/register/register.component';
 import { DashboardComponent } from './+dashboard/dashboard.component';
@@ -8,7 +10,21 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      { path: 'dashboard', component: DashboardComponent },
+      { 
+        path: 'dashboard', 
+        component: DashboardComponent,
+        children: [
+          {
+            path: '', redirectTo: 'clients', pathMatch: 'full'
+          },
+          {
+            path: 'clients', component: ClientsComponent
+          },
+          {
+            path: 'add-client', component: AddClientComponent
+          }
+        ] 
+      },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
