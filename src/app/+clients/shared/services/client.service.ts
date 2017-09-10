@@ -1,16 +1,19 @@
 import { Client } from './../models/client.model';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ClientService {
-    clients: FirebaseListObservable<any[]>;
-    client: FirebaseObjectObservable<any>;
+  clients: FirebaseListObservable<any[]>;
+  client: FirebaseObjectObservable<any>;
 
-    constructor(public af: AngularFireDatabase) { }
+  constructor(
+    public af: AngularFireDatabase
+  ) { }
 
-    public getClientsList() {
-        return this.clients = this.af.list('/clients') as FirebaseListObservable<Client[]>;
-    }
+  public getClients() {
+    return this.clients = this.af.list('/clients') as FirebaseListObservable<Client[]>;
+  }
 
 }

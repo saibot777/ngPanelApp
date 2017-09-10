@@ -1,4 +1,3 @@
-import { Client } from './../shared/models/client.model';
 import { ClientService } from './../shared/services/client.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,19 +7,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
-  clients: Client[];
+  clients: any[];
+  totalOwed: number;
 
-  constructor(private clientService: ClientService) { }
+  constructor(
+    public clientService: ClientService
+  ) { }
 
   ngOnInit() {
-    this.getClients();
+      this.getClients();
+      this.getTotalOwed();
   }
 
-  private getClients() {
-    this.clientService.getClientsList().subscribe(clients => {
+  public getClients() {
+    this.clientService.getClients().subscribe(clients => {
       this.clients = clients;
-      console.log(this.clients);
     });
+  }
+
+  getTotalOwed(){
+    let total = 0;
+    for (let i = 0;i < this.clients.length; i++) {
+      total += parseFloat(this.clients[i].balance);
+    }
+    this.totalOwed = total;
+    console.log(this.totalOwed);
   }
 
 }

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { clientsComponents, clientsServices } from './clients.collections';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { clientsComponents, clientsServices } from './clients.collections';
     ...clientsComponents
   ],
   providers: [
-    ...clientsServices
+    ...clientsServices,
+    AngularFireDatabase
   ]
 })
 export class ClientsModule { }
